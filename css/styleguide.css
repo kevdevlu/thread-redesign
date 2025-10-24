@@ -1,0 +1,99 @@
+:root { 
+  --bali-hai: #8a99ac;
+  --black: #000000;
+  --concrete: #f2f2f2;
+  --paarl: #a34924;
+  --pickled-bluewood: #2c4859;
+  --pickled-bluewood-2: #324856;
+  --white: #ffffff;
+  --white-2: #ffffffad;
+ 
+  --font-size-l: 18px;
+  --font-size-m: 16px;
+  --font-size-xl: 22px;
+  --font-size-xxl: 28px;
+  --font-size-xxxl: 32px;
+  --font-size-xxxxl: 38px;
+  --font-size-xxxxxl: 48px;
+ 
+  --font-family-manrope: "Manrope", Helvetica;
+}
+.manrope-bold-pickled-bluewood-16px {
+  color: var(--pickled-bluewood);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-bold-pickled-bluewood-22px {
+  color: var(--pickled-bluewood);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-bold-white-18px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-bold-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-extra-bold-pickled-bluewood-22px {
+  color: var(--pickled-bluewood);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.manrope-medium-white-22px {
+  color: var(--white-2);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.manrope-bold-white-48px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-bold-pickled-bluewood-38px {
+  color: var(--pickled-bluewood);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.manrope-extra-bold-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.manrope-medium-pickled-bluewood-16px {
+  color: var(--pickled-bluewood);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}

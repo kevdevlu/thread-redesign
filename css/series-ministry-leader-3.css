@@ -1,0 +1,225 @@
+/* screen - series-ministry-leader-3 */
+
+.series-ministry-leader-3 {
+  background-color: var(--white);
+  height: 1445px;
+  min-width: 1440px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.series-ministry-leader-3 .white-woven-fabric-1 {
+  height: 1445px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 964px;
+}
+
+.series-ministry-leader-3 .line-27 {
+  position: absolute;
+}
+
+.series-ministry-leader-3 .rectangle-11 {
+  background-color: var(--bali-hai);
+  border-radius: 15px;
+  height: 90.52%;
+  left: calc(50.00% - 473px);
+  position: absolute;
+  top: 6.71%;
+  width: 1176px;
+}
+
+.series-ministry-leader-3 .group-72 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 551px;
+  position: absolute;
+  top: 152px;
+  width: 265px;
+}
+
+.series-ministry-leader-3 .rectangle-23 {
+  background-color: var(--concrete);
+  border-radius: 10px;
+  height: 189px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 263px;
+}
+
+.series-ministry-leader-3 .star {
+  height: 28px;
+  left: 228px;
+  position: absolute;
+  top: 154px;
+  width: 28px;
+}
+
+.series-ministry-leader-3 .episodes-0-4 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.series-ministry-leader-3 .you-tube_-playlist_-thumbnails-01 {
+  height: 140px;
+  left: 558px;
+  top: 159px;
+  width: 248px;
+}
+
+.series-ministry-leader-3 .group {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 265px;
+}
+
+.series-ministry-leader-3 .group-1 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 283px;
+  position: absolute;
+  top: 0;
+  width: 265px;
+}
+
+.series-ministry-leader-3 .group-107 {
+  background-image: url(../img/rectangle-13.svg);
+  background-size: 100% 100%;
+  display: flex;
+  height: 1288px;
+  left: 1411px;
+  position: absolute;
+  top: 106px;
+  width: 4px;
+}
+
+.series-ministry-leader-3 .rectangle-14 {
+  background-color: var(--pickled-bluewood-2);
+  border-radius: 15px;
+  height: 4px;
+  margin-left: -146.5px;
+  margin-top: 146.5px;
+  transform: rotate(-90.00deg);
+  width: 297px;
+}
+
+.series-ministry-leader-3 .rectangle-8 {
+  background-color: var(--concrete);
+  border-radius: 15px;
+  height: 800px;
+  left: 20px;
+  position: fixed;
+  top: 15px;
+  width: 212px;
+}
+
+.series-ministry-leader-3 .group-99 {
+  display: flex;
+  flex-direction: column;
+  height: 669px;
+  left: 68px;
+  position: fixed;
+  top: 117px;
+  width: 172px;
+}
+
+.series-ministry-leader-3 .dashboard {
+  height: 27px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 1px;
+  white-space: nowrap;
+  width: 138px;
+}
+
+.series-ministry-leader-3 .group-100 {
+  height: 663px;
+  left: 37px;
+  position: fixed;
+  top: 120px;
+  width: 26px;
+}
+
+.series-ministry-leader-3 .vector-3 {
+  height: 7.14%;
+  left: 19.85%;
+  position: absolute;
+  top: 34.15%;
+  width: 49.83%;
+}
+
+.series-ministry-leader-3 .logo-1 {
+  aspect-ratio: 1;
+  height: 121px;
+  left: 28px;
+  object-fit: cover;
+  position: fixed;
+  top: -6px;
+  width: 121px;
+}
+
+.series-ministry-leader-3 .rectangle-12 {
+  background-color: var(--bali-hai);
+  border-radius: 15px;
+  height: 69px;
+  left: -229px;
+  position: fixed;
+  top: -256px;
+  width: 1176px;
+}
+
+.series-ministry-leader-3 .profile-2 {
+  aspect-ratio: 1;
+  height: 33px;
+  left: 1210px;
+  object-fit: cover;
+  position: fixed;
+  top: 33px;
+  width: 33px;
+}
+
+.series-ministry-leader-3 .search-for-a-resource {
+  left: 317px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: fixed;
+  top: 36px;
+  white-space: nowrap;
+  width: 290px;
+}
+
+.series-ministry-leader-3 .group-33 {
+  background-image: url(../img/search.svg);
+  background-size: 100% 100%;
+  height: 24px;
+  left: 270px;
+  position: fixed;
+  top: 36px;
+  width: 24px;
+}
+
+.series-ministry-leader-3 .name {
+  left: 1256px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: fixed;
+  top: 37px;
+  white-space: nowrap;
+  width: 138px;
+}
+
+.series-ministry-leader-3 .line-28 {
+  position: fixed;
+}

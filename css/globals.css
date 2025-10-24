@@ -1,0 +1,673 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Manrope:500,700,800,400|Inter:700,400");
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/68fab2d33c8578eaefddc692.68fab2d33c8578eaefddc695.VcDevwS.hcp.png");
+
+
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.thread-series-resources {
+  left: 275px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 118px;
+  white-space: nowrap;
+  width: 263px;
+}
+
+.thread-add-on-series-resources {
+  left: 275px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 848px;
+  width: 355px;
+}
+
+.library-resources {
+  left: 275px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 1134px;
+  white-space: nowrap;
+  width: 280px;
+}
+
+.group-129 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 551px;
+  position: absolute;
+  top: 890px;
+  width: 265px;
+}
+
+.place-of-prayer {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-133 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 551px;
+  position: absolute;
+  top: 1176px;
+  width: 265px;
+}
+
+.chicago-series {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-128 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 275px;
+  position: absolute;
+  top: 152px;
+  width: 265px;
+}
+
+.welcome-onboarding {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-130 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 275px;
+  position: absolute;
+  top: 890px;
+  width: 265px;
+}
+
+.encounter {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-134 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 275px;
+  position: absolute;
+  top: 1176px;
+  width: 265px;
+}
+
+.group-73 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 834px;
+  position: absolute;
+  top: 152px;
+  width: 265px;
+}
+
+.episodes-5-11 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-131 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 834px;
+  position: absolute;
+  top: 890px;
+  width: 265px;
+}
+
+.treasuring-god {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-135 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 834px;
+  position: absolute;
+  top: 1176px;
+  width: 265px;
+}
+
+.group-74 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 1117px;
+  position: absolute;
+  top: 152px;
+  width: 265px;
+}
+
+.episodes-12-19 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-132 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 1117px;
+  position: absolute;
+  top: 890px;
+  width: 265px;
+}
+
+.light-of-the-world {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-136 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 1117px;
+  position: absolute;
+  top: 1176px;
+  width: 265px;
+}
+
+.group-75 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 275px;
+  position: absolute;
+  top: 378px;
+  width: 265px;
+}
+
+.episodes-20-26 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.you-tube_-playlist_-thumbnails-03 {
+  height: 141px;
+  left: 1124px;
+  top: 160px;
+  width: 250px;
+}
+
+.you-tube_-playlist_-thumbnails-04 {
+  height: 141px;
+  left: 281px;
+  top: 386px;
+  width: 251px;
+}
+
+.group-127 {
+  height: 189px;
+  left: 552px;
+  position: absolute;
+  top: 378px;
+  width: 829px;
+}
+
+.episodes-27-30 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.episodes-31-35 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.group-2 {
+  box-shadow: 0px 4px 4px #00000026;
+  height: 189px;
+  left: 566px;
+  position: absolute;
+  top: 0;
+  width: 265px;
+}
+
+.episodes-36-41 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.you-tube_-playlist_-thumbnails-05 {
+  height: 140px;
+  left: 6px;
+  top: 8px;
+  width: 249px;
+}
+
+.you-tube_-playlist_-thumbnails-06 {
+  height: 140px;
+  left: 289px;
+  top: 8px;
+  width: 249px;
+}
+
+.you-tube_-playlist_-thumbnails-07 {
+  height: 140px;
+  left: 573px;
+  top: 8px;
+  width: 250px;
+}
+
+.group-126 {
+  height: 189px;
+  left: 275px;
+  position: absolute;
+  top: 604px;
+  width: 263px;
+}
+
+.episodes-42-47 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.you-tube_-playlist_-thumbnails-1 {
+  height: 141px;
+  left: 6px;
+  top: 8px;
+  width: 251px;
+}
+
+.you-tube_-playlist_-thumbnails-02 {
+  height: 141px;
+  left: 840px;
+  top: 160px;
+  width: 250px;
+}
+
+.group-125 {
+  height: 189px;
+  left: 555px;
+  position: absolute;
+  top: 604px;
+  width: 829px;
+}
+
+.episodes-49-55 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.episodes-56-61 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.episodes-62-70 {
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.screenshot-2025-06-30-at-23905-pm-1 {
+  aspect-ratio: 1.78;
+  height: 140px;
+  left: 7px;
+  object-fit: cover;
+  position: absolute;
+  top: 9px;
+  width: 249px;
+}
+
+.screenshot-2025-10-22-at-61201-pm-1 {
+  aspect-ratio: 1.77;
+  height: 141px;
+  left: 289px;
+  object-fit: cover;
+  position: absolute;
+  top: 8px;
+  width: 250px;
+}
+
+.screenshot-2025-10-22-at-62431-pm-1 {
+  aspect-ratio: 1.79;
+  height: 140px;
+  left: 572px;
+  object-fit: cover;
+  position: absolute;
+  top: 8px;
+  width: 250px;
+}
+
+.screenshot-2025-10-22-at-92140-pm-1 {
+  aspect-ratio: 1.79;
+  height: 139px;
+  left: 282px;
+  object-fit: cover;
+  position: absolute;
+  top: 159px;
+  width: 248px;
+}
+
+.screenshot-2025-05-21-at-20920-pm-1 {
+  aspect-ratio: 1.78;
+  height: 139px;
+  left: 282px;
+  object-fit: cover;
+  position: absolute;
+  top: 897px;
+  width: 248px;
+}
+
+.screenshot-2025-05-21-at-21950-pm-1 {
+  aspect-ratio: 1.78;
+  height: 139px;
+  left: 558px;
+  object-fit: cover;
+  position: absolute;
+  top: 897px;
+  width: 248px;
+}
+
+.screenshot-2025-10-22-at-93629-pm-1 {
+  aspect-ratio: 1.77;
+  height: 141px;
+  left: 840px;
+  position: absolute;
+  top: 898px;
+  width: 250px;
+}
+
+.light-of-the-world-1 {
+  aspect-ratio: 1.79;
+  height: 141px;
+  left: 1122px;
+  position: absolute;
+  top: 898px;
+  width: 253px;
+}
+
+.branding-overview-artboard-1-8-1 {
+  left: 281px;
+}
+
+.branding-overview-artboard-1-8-2 {
+  left: 558px;
+}
+
+.branding-overview-artboard-1-8-3 {
+  left: 841px;
+}
+
+.branding-overview-artboard-1-8-4 {
+  left: 1123px;
+}
+
+.group-99-item {
+  height: 27px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 1px;
+  margin-top: 39px;
+  white-space: nowrap;
+  width: 138px;
+}
+
+.notifications {
+  height: 25px;
+  letter-spacing: -0.44px;
+  line-height: 24px;
+  margin-left: 1px;
+  margin-top: 39px;
+  white-space: nowrap;
+  width: 159px;
+}
+
+.settings {
+  height: 25px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: 371px;
+  white-space: nowrap;
+  width: 159px;
+}
+
+.logout {
+  height: 25px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-left: 1px;
+  margin-top: 25px;
+  white-space: nowrap;
+  width: 159px;
+}
+
+.layer_1 {
+  align-items: flex-end;
+  display: flex;
+  height: 22px;
+  left: 0;
+  overflow: hidden;
+  padding: 0 0.0px;
+  position: absolute;
+  top: 130px;
+  width: 22px;
+}
+
+.gnwuq5 {
+  display: flex;
+  height: 22px;
+  margin-bottom: 0;
+  width: 22px;
+}
+
+.group-3 {
+  flex: 1;
+  position: relative;
+  width: 22px;
+}
+
+.vector {
+  height: 73.28%;
+  left: 0;
+  position: absolute;
+  top: 26.72%;
+  width: 73.48%;
+}
+
+.vector-1 {
+  height: 73.59%;
+  left: 40.21%;
+  position: absolute;
+  top: 0;
+  width: 59.79%;
+}
+
+.layer_1-1 {
+  height: 18px;
+  left: 1px;
+  position: absolute;
+  top: 0;
+  width: 21px;
+}
+
+.group-69 {
+  height: 3.17%;
+  left: 7.69%;
+  position: absolute;
+  top: 9.65%;
+  width: 67.31%;
+}
+
+.vector-2 {
+  height: 103.81%;
+  left: -2.29%;
+  position: absolute;
+  top: 0;
+  width: 104.57%;
+}
+
+.vector-4 {
+  height: 6.96%;
+  left: 19.87%;
+  position: absolute;
+  top: 49.71%;
+  width: 49.78%;
+}
+
+.vector-5 {
+  height: 6.94%;
+  left: 35.94%;
+  position: absolute;
+  top: 64.76%;
+  width: 33.71%;
+}
+
+.group-31 {
+  height: 20px;
+  left: 1px;
+  position: absolute;
+  top: 198px;
+  width: 19px;
+}
+
+.bell {
+  height: 19px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 19px;
+}
+
+.ellipse-14 {
+  background-color: var(--paarl);
+  border-radius: 3.7px;
+  height: 7px;
+  left: 10px;
+  position: absolute;
+  top: 0;
+  width: 7px;
+}
+
+.g-ic55z {
+  height: 70px;
+  left: 2px;
+  position: absolute;
+  top: 592px;
+  width: 24px;
+}
+
+.branding-overview-artboard-1-8 {
+  aspect-ratio: 1.8;
+  height: 139px;
+  position: absolute;
+  top: 1183px;
+  width: 250px;
+}
+
+.chicago-series-4 {
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.line {
+  height: 3px;
+  left: 40px;
+  top: 210px;
+  width: 98px;
+}
+
+.you-tube_-playlist_-thumbnails {
+  aspect-ratio: 1.78;
+  object-fit: cover;
+  position: absolute;
+}
