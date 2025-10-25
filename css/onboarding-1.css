@@ -1,0 +1,265 @@
+/* ===================================================================
+   PAGE-SPECIFIC STYLES: Onboarding Page 1
+   Dashboard shell styles are in components.css
+   =================================================================== */
+
+.series-welcome .rectangle-6 {
+  position: absolute;
+  top: 154px;
+  left: 270px;
+  width: 306px;
+  height: 640px;
+  background-color: #f2f2f2;
+  opacity: 0.3;
+}
+
+.series-welcome .rectangle-7 {
+  position: absolute;
+  top: 154px;
+  left: 270px;
+  width: 498px;
+  height: 49px;
+  background-color: #ffffff;
+  border-radius: 0px 15px 15px 0px;
+}
+
+.series-welcome .rectangle-8 {
+  position: absolute;
+  top: 154px;
+  left: 572px;
+  width: 745px;
+  height: 651px;
+}
+
+.series-welcome .text-wrapper-9 {
+  position: absolute;
+  top: 211px;
+  left: 285px;
+  width: 197px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-welcome .text-wrapper-10 {
+  position: absolute;
+  top: 291px;
+  left: 285px;
+  width: 197px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-welcome .launch-prep-calendar {
+  position: absolute;
+  top: 251px;
+  left: 285px;
+  width: 197px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-welcome .text-wrapper-11 {
+  top: 171px;
+  left: 285px;
+  width: 197px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: absolute;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+}
+
+.series-welcome .group-9 {
+  position: absolute;
+  top: 180px;
+  left: 602px;
+  width: 683px;
+  height: 532px;
+}
+
+.series-welcome .group-10 {
+  position: absolute;
+  top: 278px;
+  left: 355px;
+  width: 330px;
+  height: 254px;
+}
+
+.series-welcome .rectangle-9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 328px;
+  height: 254px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-welcome .text-wrapper-12 {
+  top: 194px;
+  left: 20px;
+  width: 294px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: absolute;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+}
+
+.series-welcome .screenshot {
+  position: absolute;
+  top: 289px;
+  left: 366px;
+  width: 305px;
+  height: 171px;
+  aspect-ratio: 1.79;
+  object-fit: cover;
+}
+
+.series-welcome .group-11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 328px;
+  height: 254px;
+}
+
+.series-welcome .group-12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 330px;
+  height: 254px;
+}
+
+.series-welcome .screenshot-2 {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  width: 308px;
+  height: 171px;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+}
+
+.series-welcome .screenshot-3 {
+  top: 91px;
+  left: 122px;
+  position: absolute;
+  width: 68px;
+  height: 47px;
+  aspect-ratio: 1.45;
+}
+
+.series-welcome .group-13 {
+  position: absolute;
+  top: 278px;
+  left: 0;
+  width: 328px;
+  height: 254px;
+}
+
+.series-welcome .screenshot-4 {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  width: 302px;
+  height: 169px;
+  aspect-ratio: 1.79;
+  object-fit: cover;
+}
+
+.series-welcome .screenshot-5 {
+  top: 97px;
+  left: 122px;
+  position: absolute;
+  width: 68px;
+  height: 47px;
+  aspect-ratio: 1.45;
+}
+
+.series-welcome .group-14 {
+  position: absolute;
+  top: 0;
+  left: 355px;
+  width: 328px;
+  height: 254px;
+}
+
+.series-welcome .thread-podcast-app {
+  position: absolute;
+  top: 191px;
+  left: 20px;
+  width: 294px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.series-welcome .screenshot-6 {
+  position: absolute;
+  top: 11px;
+  left: 14px;
+  width: 301px;
+  height: 169px;
+  aspect-ratio: 1.78;
+  object-fit: cover;
+}
+
+.series-welcome .screenshot-7 {
+  top: 91px;
+  left: 109px;
+  position: absolute;
+  width: 68px;
+  height: 47px;
+  aspect-ratio: 1.45;
+}
+
+.series-welcome .screenshot-8 {
+  top: 375px;
+  left: 494px;
+  position: absolute;
+  width: 68px;
+  height: 47px;
+  aspect-ratio: 1.45;
+}
+
+/* Scrollbar */
+.series-welcome .rectangle-4 {
+  margin-left: -146.5px;
+  width: 297px;
+  height: 4px;
+  margin-top: 146.5px;
+  background-color: #324856;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}
+
+.series-welcome .rectangle-5 {
+  margin-left: -347.0px;
+  width: 698px;
+  height: 4px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}

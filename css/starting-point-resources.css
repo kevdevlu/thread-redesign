@@ -1,0 +1,313 @@
+/* ===================================================================
+   PAGE-SPECIFIC STYLES: style5
+   Dashboard shell styles are in components.css
+   =================================================================== */
+
+.series-ministry .text-wrapper-8 {
+  position: absolute;
+  top: 118px;
+  left: 275px;
+  width: 332px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.series-ministry .rectangle-4 {
+  position: absolute;
+  top: 152px;
+  left: 274px;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star {
+  position: absolute;
+  top: 306px;
+  left: 502px;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .p {
+  position: absolute;
+  top: 308px;
+  left: 290px;
+  width: 187px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.series-ministry .rectangle-5 {
+  top: 389px;
+  left: 274px;
+  position: absolute;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star-2 {
+  top: 543px;
+  left: 502px;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .text-wrapper-9 {
+  position: absolute;
+  top: 545px;
+  left: 290px;
+  width: 187px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.series-ministry .rectangle-6 {
+  top: 389px;
+  left: 557px;
+  position: absolute;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star-3 {
+  top: 543px;
+  left: 785px;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .text-wrapper-10 {
+  position: absolute;
+  top: 545px;
+  left: 572px;
+  width: 187px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.series-ministry .rectangle-7 {
+  top: 152px;
+  left: 557px;
+  position: absolute;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star-4 {
+  top: 306px;
+  left: 785px;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .text-wrapper-11 {
+  position: absolute;
+  top: 308px;
+  left: 572px;
+  width: 205px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.series-ministry .rectangle-8 {
+  top: 152px;
+  left: 840px;
+  position: absolute;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star-5 {
+  top: 306px;
+  left: 1068px;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .text-wrapper-12 {
+  position: absolute;
+  top: 308px;
+  left: 856px;
+  width: 187px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.series-ministry .rectangle-9 {
+  top: 152px;
+  left: 1123px;
+  position: absolute;
+  width: 263px;
+  height: 215px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000026;
+}
+
+.series-ministry .star-6 {
+  top: 306px;
+  left: 1351px;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.series-ministry .text-wrapper-13 {
+  position: absolute;
+  top: 308px;
+  left: 1138px;
+  width: 187px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.series-ministry .group-7 {
+  position: absolute;
+  width: 66px;
+  height: 28px;
+  top: 110px;
+  left: 1313px;
+}
+
+.series-ministry .youtube-playlist {
+  position: absolute;
+  top: 158px;
+  left: 280px;
+  width: 250px;
+  height: 141px;
+  aspect-ratio: 1.78;
+  object-fit: cover;
+}
+
+.series-ministry .screenshot {
+  position: absolute;
+  top: 161px;
+  left: 563px;
+  width: 250px;
+  height: 140px;
+  aspect-ratio: 1.78;
+  object-fit: cover;
+}
+
+.series-ministry .screenshot-2 {
+  position: absolute;
+  top: 161px;
+  left: 847px;
+  width: 250px;
+  height: 140px;
+  aspect-ratio: 1.78;
+  object-fit: cover;
+}
+
+.series-ministry .screenshot-3 {
+  position: absolute;
+  top: 161px;
+  left: 1130px;
+  width: 249px;
+  height: 141px;
+  aspect-ratio: 1.76;
+  object-fit: cover;
+}
+
+.series-ministry .screenshot-4 {
+  position: absolute;
+  top: 396px;
+  left: 280px;
+  width: 251px;
+  height: 141px;
+  aspect-ratio: 1.77;
+  object-fit: cover;
+}
+
+.series-ministry .screenshot-5 {
+  position: absolute;
+  top: 396px;
+  left: 563px;
+  width: 251px;
+  height: 141px;
+  aspect-ratio: 1.77;
+  object-fit: cover;
+}
+
+.series-ministry .group-8 {
+  position: absolute;
+  top: 106px;
+  left: 1411px;
+  width: 4px;
+  height: 698px;
+  display: flex;
+  flex-direction: column;
+  gap: 196.5px;
+}
+
+.series-ministry .rectangle-10 {
+  margin-left: -146.5px;
+  width: 297px;
+  height: 4px;
+  margin-top: 146.5px;
+  background-color: #324856;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}
+
+.series-ministry .rectangle-11 {
+  margin-left: -347.0px;
+  width: 698px;
+  height: 4px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}

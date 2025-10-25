@@ -1,0 +1,264 @@
+/* ===================================================================
+   PAGE-SPECIFIC STYLES: style9
+   Dashboard shell styles are in components.css
+   =================================================================== */
+
+.series-ministry .rectangle-4 {
+  position: absolute;
+  top: 154px;
+  left: 270px;
+  width: 295px;
+  height: 635px;
+  background-color: #f2f2f2;
+  opacity: 0.3;
+}
+
+.series-ministry .text-wrapper-8 {
+  position: absolute;
+  top: 462px;
+  left: 285px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .text-wrapper-9 {
+  position: absolute;
+  top: 421px;
+  left: 285px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .p {
+  position: absolute;
+  top: 502px;
+  left: 285px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .rectangle-5 {
+  position: absolute;
+  top: 196px;
+  left: 270px;
+  width: 337px;
+  height: 211px;
+  background-color: #ffffff;
+}
+
+.series-ministry .text-wrapper-10 {
+  position: absolute;
+  top: 211px;
+  left: 285px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .text-wrapper-11 {
+  position: absolute;
+  top: 246px;
+  left: 317px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .text-wrapper-12 {
+  position: absolute;
+  top: 277px;
+  left: 317px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-decoration: underline;
+}
+
+.series-ministry .text-wrapper-13 {
+  position: absolute;
+  top: 307px;
+  left: 317px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .text-wrapper-14 {
+  position: absolute;
+  top: 335px;
+  left: 317px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .text-wrapper-15 {
+  position: absolute;
+  top: 364px;
+  left: 317px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .group-7 {
+  position: absolute;
+  width: 66px;
+  height: 28px;
+  top: 110px;
+  left: 1313px;
+}
+
+.series-ministry .text-wrapper-16 {
+  position: absolute;
+  top: 118px;
+  left: 275px;
+  width: 332px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.series-ministry .group-8 {
+  position: absolute;
+  top: 106px;
+  left: 1411px;
+  width: 4px;
+  height: 698px;
+  display: flex;
+  flex-direction: column;
+  gap: 196.5px;
+}
+
+.series-ministry .rectangle-6 {
+  margin-left: -146.5px;
+  width: 297px;
+  height: 4px;
+  margin-top: 146.5px;
+  background-color: #324856;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}
+
+.series-ministry .rectangle-7 {
+  margin-left: -347.0px;
+  width: 698px;
+  height: 4px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  transform: rotate(-90.00deg);
+}
+
+.series-ministry .text-wrapper-17 {
+  position: absolute;
+  top: 171px;
+  left: 285px;
+  width: 197px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .group-9 {
+  position: absolute;
+  width: 18px;
+  height: 134px;
+  top: 251px;
+  left: 530px;
+}
+
+.series-ministry .rectangle-8 {
+  position: absolute;
+  top: 154px;
+  left: 561px;
+  width: 756px;
+  height: 643px;
+}
+
+.series-ministry .text-wrapper-18 {
+  position: absolute;
+  top: 172px;
+  left: 595px;
+  width: 314px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .focus-big-idea-at {
+  position: absolute;
+  top: 208px;
+  left: 595px;
+  width: 639px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 400;
+  color: #2c4859;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.series-ministry .span {
+  font-weight: 700;
+}
+
+.series-ministry .text-wrapper-19 {
+  font-weight: 500;
+}
+
+.series-ministry .group-10 {
+  position: absolute;
+  top: 167px;
+  left: 1282px;
+  width: 18px;
+  height: 18px;
+}
