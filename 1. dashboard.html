@@ -81,7 +81,7 @@
       <div class="group-72">
         <div class="rectangle-23-2 rectangle-23-3"></div>
         <div class="star"><img class="icon" src="img/icon.svg" alt="Icon" /></div>
-        <div class="episodes-0-4 manrope-bold-pickled-bluewood-16px">Episodes 0-4</div>
+        <button class="episodes-0-4 manrope-bold-pickled-bluewood-16px">Ep 4. The Story of Our Faith</button>
       </div>
       <div class="group-81"></div>
       <img
@@ -158,5 +158,155 @@
       <img class="line-27" src="img/line-27-2.svg" alt="Line 27" />
       <img class="img_1670" src="img/img-1670@2x.png" alt="IMG_1670" />
     </div>
+
+    <!-- Choose Week Modal -->
+    <div id="chooseWeekModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-title">Choose Week</h2>
+        <p class="modal-help-text">Choose the week that all members of your group first sees when they open their Thread App</p>
+
+        <div class="series-dropdown-container">
+          <label for="seriesSearch" class="dropdown-label">Select Series:</label>
+          <div class="custom-dropdown">
+            <input
+              type="text"
+              id="seriesSearch"
+              class="series-search-input"
+              value="Starting Point (0-4)"
+              autocomplete="off"
+            />
+            <div class="dropdown-list" id="dropdownList">
+              <div class="dropdown-section-label">Thread Series</div>
+              <div class="dropdown-item" data-value="0-4">Starting Point (0-4)</div>
+              <div class="dropdown-item" data-value="5-11">God's World Created (5-11)</div>
+              <div class="dropdown-item" data-value="12-19">God's People Birthed (12-19)</div>
+              <div class="dropdown-item" data-value="20-26">God's Nation Formed (20-26)</div>
+              <div class="dropdown-item" data-value="27-30">God's Land Established (27-30)</div>
+              <div class="dropdown-item" data-value="31-35">God's People Blessed (31-35)</div>
+              <div class="dropdown-item" data-value="36-41">God's People Divided (36-41)</div>
+              <div class="dropdown-item" data-value="42-46">God's People Returned (42-46)</div>
+              <div class="dropdown-item" data-value="47">God's People Waited (47)</div>
+              <div class="dropdown-item" data-value="48-55">Matthew (48-55)</div>
+              <div class="dropdown-item" data-value="56-61">Mark (56-61)</div>
+
+              <div class="dropdown-section-label">My Church Series</div>
+              <div class="dropdown-item" data-value="places-prayer">Places of Prayer: Devotionals</div>
+              <div class="dropdown-item" data-value="lords-prayer-retreat">Lord's Prayer Personal Retreat</div>
+              <div class="dropdown-item" data-value="practicing-lords-prayer">Practicing the Lord's Prayer</div>
+              <div class="dropdown-item" data-value="treasuring-god">Treasuring God</div>
+              <div class="dropdown-item" data-value="wise-men">Wise Men Say</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Change Episodes 0-4 button text on hover
+      const group72 = document.querySelector('.group-72');
+      const seriesImage = document.querySelector('.you-tube_-playlist_-thumbnails-01');
+      const episodesBtn = document.querySelector('.episodes-0-4');
+      const originalText = episodesBtn.textContent;
+      const hoverText = 'Choose Week';
+
+      function showChooseWeek() {
+        episodesBtn.textContent = hoverText;
+        episodesBtn.classList.add('active-hover');
+      }
+
+      function showEpisodes() {
+        episodesBtn.textContent = originalText;
+        episodesBtn.classList.remove('active-hover');
+      }
+
+      group72.addEventListener('mouseenter', showChooseWeek);
+      group72.addEventListener('mouseleave', showEpisodes);
+      seriesImage.addEventListener('mouseenter', showChooseWeek);
+      seriesImage.addEventListener('mouseleave', showEpisodes);
+
+      // Modal functionality
+      const modal = document.getElementById('chooseWeekModal');
+      const closeBtn = document.querySelector('.close');
+
+      // Open modal when button is clicked
+      episodesBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+      });
+
+      // Close modal when X is clicked
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+
+      // Close modal when clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // Searchable dropdown functionality
+      const searchInput = document.getElementById('seriesSearch');
+      const dropdownList = document.getElementById('dropdownList');
+      const dropdownItems = document.querySelectorAll('.dropdown-item');
+      const sectionLabels = document.querySelectorAll('.dropdown-section-label');
+
+      // Show dropdown when input is focused
+      searchInput.addEventListener('focus', function() {
+        dropdownList.style.display = 'block';
+      });
+
+      // Filter dropdown items based on search
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        let hasVisibleItems = false;
+
+        dropdownItems.forEach(function(item) {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            item.style.display = 'block';
+            hasVisibleItems = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Show/hide section labels based on whether they have visible items
+        sectionLabels.forEach(function(label) {
+          let nextElement = label.nextElementSibling;
+          let hasVisibleInSection = false;
+
+          while (nextElement && !nextElement.classList.contains('dropdown-section-label')) {
+            if (nextElement.classList.contains('dropdown-item') && nextElement.style.display !== 'none') {
+              hasVisibleInSection = true;
+              break;
+            }
+            nextElement = nextElement.nextElementSibling;
+          }
+
+          label.style.display = hasVisibleInSection ? 'block' : 'none';
+        });
+      });
+
+      // Handle item selection
+      dropdownItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          const selectedValue = this.getAttribute('data-value');
+          const selectedText = this.textContent;
+          searchInput.value = selectedText;
+          dropdownList.style.display = 'none';
+          console.log('Selected:', selectedValue, selectedText);
+          // You can add additional logic here when a series is selected
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.custom-dropdown')) {
+          dropdownList.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
