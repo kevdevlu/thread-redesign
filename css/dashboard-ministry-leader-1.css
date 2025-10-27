@@ -391,7 +391,13 @@
   line-height: 24px;
   position: absolute;
   top: 223px;
-  width: 220px;
+  min-width: 200px;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  padding: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dashboard-ministry-leader-1 .group-81 {
@@ -1063,4 +1069,87 @@
 
 .dropdown-list::-webkit-scrollbar-thumb:hover {
   background: #7a8999;
+}
+
+/* Episodes Container */
+.episodes-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Episode Card */
+.episode-card {
+  padding: 16px 20px;
+  background-color: #f2f2f2;
+  border: 2px solid #d0d0d0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Manrope", Helvetica;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c4859;
+  line-height: 1.5;
+}
+
+.episode-card:hover {
+  background-color: #e8f4f8;
+  border-color: #8a99ac;
+}
+
+.episode-card.selected {
+  background-color: #ffffff;
+  border-color: #2c4859;
+  border-width: 3px;
+  box-shadow: 0px 2px 8px rgba(44, 72, 89, 0.15);
+}
+
+/* Episodes Container Scrollbar */
+.episodes-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.episodes-container::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+
+.episodes-container::-webkit-scrollbar-thumb {
+  background: #8a99ac;
+  border-radius: 8px;
+}
+
+.episodes-container::-webkit-scrollbar-thumb:hover {
+  background: #7a8999;
+}
+
+/* Save Button */
+.modal-save-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 25px;
+  background-color: #c9b875;
+  border: none;
+  border-radius: 10px;
+  font-family: "Manrope", Helvetica;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2c4859;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-save-btn:hover {
+  background-color: #b8a566;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal-save-btn:active {
+  background-color: #a79458;
+  transform: translateY(1px);
 }

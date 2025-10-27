@@ -164,7 +164,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2 class="modal-title">Choose Week</h2>
-        <p class="modal-help-text">Choose the week that all members of your group first sees when they open their Thread App</p>
+        <p class="modal-help-text">Choose the week that all members of your group sees when they first open their Thread App.</p>
 
         <div class="series-dropdown-container">
           <label for="seriesSearch" class="dropdown-label">Select Series:</label>
@@ -188,7 +188,7 @@
               <div class="dropdown-item" data-value="42-46">God's People Returned (42-46)</div>
               <div class="dropdown-item" data-value="47">God's People Waited (47)</div>
               <div class="dropdown-item" data-value="48-55">Matthew (48-55)</div>
-              <div class="dropdown-item" data-value="56-61">Mark (56-61)</div>
+              <div class="dropdown-item" data-value="56-60">Mark (56-60)</div>
 
               <div class="dropdown-section-label">My Church Series</div>
               <div class="dropdown-item" data-value="places-prayer">Places of Prayer: Devotionals</div>
@@ -199,6 +199,12 @@
             </div>
           </div>
         </div>
+
+        <!-- Episode Selection Cards -->
+        <div class="episodes-container" id="episodesContainer"></div>
+
+        <!-- Save Button -->
+        <button class="modal-save-btn" id="saveBtn">Save</button>
       </div>
     </div>
 
@@ -207,7 +213,7 @@
       const group72 = document.querySelector('.group-72');
       const seriesImage = document.querySelector('.you-tube_-playlist_-thumbnails-01');
       const episodesBtn = document.querySelector('.episodes-0-4');
-      const originalText = episodesBtn.textContent;
+      var originalText = episodesBtn.textContent;
       const hoverText = 'Choose Week';
 
       function showChooseWeek() {
@@ -225,6 +231,183 @@
       seriesImage.addEventListener('mouseenter', showChooseWeek);
       seriesImage.addEventListener('mouseleave', showEpisodes);
 
+      // Episode data for each series
+      const seriesEpisodes = {
+        '0-4': [
+          '0. Welcome to Thread',
+          '1. Our Image of God',
+          '2. Why Story?',
+          '3. Why Spirituality?',
+          '4. The Story of Our Faith'
+        ],
+        '5-11': [
+          '5. Creation & Beauty',
+          '6. Seasons & Rhythms',
+          '7. Light & Darkness',
+          '8. Becoming Fully Human',
+          '9. Human Limitations',
+          '10. The Flood',
+          '11. Babel'
+        ],
+        '12-19': [
+          '12. Abraham',
+          '13. Abraham: Covenant',
+          '14. Sarah & Hagar',
+          '15. Jacob',
+          '16. Jacob\'s Wrestling Match',
+          '17. Joseph & Judah',
+          '18. Moses in Egypt',
+          '19. Moses in Wilderness'
+        ],
+        '20-26': [
+          '20. The Sign',
+          '21. The Exodus',
+          '22. The Wilderness',
+          '23. The Presence',
+          '24. Law & Priesthood',
+          '25. The Tabernacle',
+          '26. The Culture'
+        ],
+        '27-30': [
+          '27. Promised Land',
+          '28. Joshua',
+          '29. Judges',
+          '30. Ruth'
+        ],
+        '31-35': [
+          '31. Hannah & Samuel',
+          '32. King Saul',
+          '33. David & Jonathan',
+          '34. King David',
+          '35. King Solomon'
+        ],
+        '36-41': [
+          '36. Israel\'s Kings',
+          '37. Israel\'s Prophets',
+          '38. Judah\'s King\'s',
+          '39. Judah\'s Prophets',
+          '40. Exile',
+          '41. Jerusalem\'s Fall'
+        ],
+        '42-46': [
+          '42. Life in Exile',
+          '43. Exilic Prophets',
+          '44. Rebuilding the Temple',
+          '45. Esther',
+          '46. Rebuilding the Wall'
+        ],
+        '47': [
+          '47. God\'s People Waited'
+        ],
+        '48-55': [
+          '48. The Jewish Jesus',
+          '49. The Teacher Jesus',
+          '50. The Ministry of Jesus',
+          '51. Parables of the Kingdom',
+          '52. The Messiah Jesus',
+          '53. The Community of Jesus',
+          '54. The Judgment of Jesus',
+          '55. The Triumph of Jesus'
+        ],
+        '56-60': [
+          '56. Exodus (Mark pt. 1)',
+          '57. Crowds (Mark pt. 2)',
+          '58. Battles (Mark pt. 3)',
+          '59. Calling (Mark pt. 4)',
+          '60. Grace (Mark pt. 5)',
+        ]
+        // Add episodes for My Church Series as needed
+      };
+
+      // Mapping of series values to their display names
+      const seriesNames = {
+        '0-4': 'Starting Point (0-4)',
+        '5-11': 'God\'s World Created (5-11)',
+        '12-19': 'God\'s People Birthed (12-19)',
+        '20-26': 'God\'s Nation Formed (20-26)',
+        '27-30': 'God\'s Land Established (27-30)',
+        '31-35': 'God\'s People Blessed (31-35)',
+        '36-41': 'God\'s People Divided (36-41)',
+        '42-46': 'God\'s People Returned (42-46)',
+        '47': 'God\'s People Waited (47)',
+        '48-55': 'Matthew (48-55)',
+        '56-60': 'Mark (56-60)'
+      };
+
+      // Mapping of series values to their thumbnail images
+      const seriesImages = {
+        '0-4': 'img/youtube-playlist-thumbnails-01.png',
+        '5-11': 'img/youtube-playlist-thumbnails-02.png',
+        '12-19': 'img/youtube-playlist-thumbnails-03.png',
+        '20-26': 'img/youtube-playlist-thumbnails-04.png',
+        '27-30': 'img/youtube-playlist-thumbnails-05.png',
+        '31-35': 'img/youtube-playlist-thumbnails-06.png',
+        '36-41': 'img/youtube-playlist-thumbnails-07.png',
+        '42-46': 'img/youtube-playlist-thumbnails-1.png',
+        '47': 'img/screenshot-2025-10-22-at-9-21-40-pm-1.png',
+        '48-55': 'img/screenshot-2025-06-30-at-2-39-05-pm-1@2x.png',
+        '56-60': 'img/screenshot-2025-10-22-at-6-12-01-pm-1@2x.png'
+      };
+
+      // Function to determine which series an episode number belongs to
+      function getSeriesForEpisode(episodeNumber) {
+        const num = parseInt(episodeNumber);
+        if (num >= 0 && num <= 4) return '0-4';
+        if (num >= 5 && num <= 11) return '5-11';
+        if (num >= 12 && num <= 19) return '12-19';
+        if (num >= 20 && num <= 26) return '20-26';
+        if (num >= 27 && num <= 30) return '27-30';
+        if (num >= 31 && num <= 35) return '31-35';
+        if (num >= 36 && num <= 41) return '36-41';
+        if (num >= 42 && num <= 46) return '42-46';
+        if (num === 47) return '47';
+        if (num >= 48 && num <= 55) return '48-55';
+        if (num >= 56 && num <= 60) return '56-60';
+        return '0-4'; // Default fallback
+      }
+
+      let selectedEpisode = null;
+      const episodesContainer = document.getElementById('episodesContainer');
+      const saveBtn = document.getElementById('saveBtn');
+      const seriesImageElement = document.querySelector('.you-tube_-playlist_-thumbnails-01');
+
+      // Function to populate episodes for selected series
+      function populateEpisodes(seriesValue) {
+        episodesContainer.innerHTML = '';
+        selectedEpisode = null;
+
+        const episodes = seriesEpisodes[seriesValue];
+        if (!episodes) {
+          return;
+        }
+
+        // Get current episode from button text (remove "Ep " prefix)
+        const currentButtonText = originalText.replace(/^Ep\s+/, '');
+
+        episodes.forEach(function(episode) {
+          const card = document.createElement('div');
+          card.className = 'episode-card';
+          card.textContent = episode;
+
+          // Check if this episode matches the current button text
+          if (episode === currentButtonText) {
+            card.classList.add('selected');
+            selectedEpisode = episode;
+          }
+
+          card.addEventListener('click', function() {
+            // Remove selected class from all cards
+            document.querySelectorAll('.episode-card').forEach(function(c) {
+              c.classList.remove('selected');
+            });
+            // Add selected class to clicked card
+            this.classList.add('selected');
+            selectedEpisode = episode;
+          });
+          episodesContainer.appendChild(card);
+        });
+      }
+
       // Modal functionality
       const modal = document.getElementById('chooseWeekModal');
       const closeBtn = document.querySelector('.close');
@@ -232,6 +415,22 @@
       // Open modal when button is clicked
       episodesBtn.addEventListener('click', function() {
         modal.style.display = 'block';
+
+        // Extract episode number from current button text
+        const currentText = originalText.replace(/^Ep\s+/, '');
+        const episodeNumberMatch = currentText.match(/^(\d+)\./);
+
+        let seriesValue = '0-4'; // Default
+        if (episodeNumberMatch) {
+          const episodeNumber = episodeNumberMatch[1];
+          seriesValue = getSeriesForEpisode(episodeNumber);
+        }
+
+        // Update dropdown to show the correct series
+        searchInput.value = seriesNames[seriesValue];
+
+        // Populate episodes for the current series
+        populateEpisodes(seriesValue);
       });
 
       // Close modal when X is clicked
@@ -289,16 +488,60 @@
         });
       });
 
-      // Handle item selection
+      // Handle series selection
       dropdownItems.forEach(function(item) {
         item.addEventListener('click', function() {
           const selectedValue = this.getAttribute('data-value');
           const selectedText = this.textContent;
           searchInput.value = selectedText;
           dropdownList.style.display = 'none';
-          console.log('Selected:', selectedValue, selectedText);
-          // You can add additional logic here when a series is selected
+          populateEpisodes(selectedValue);
         });
+      });
+
+      // Function to measure text width
+      function measureTextWidth(text, element) {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        const computedStyle = window.getComputedStyle(element);
+        context.font = computedStyle.font;
+        return context.measureText(text).width;
+      }
+
+      // Save button handler
+      saveBtn.addEventListener('click', function() {
+        if (selectedEpisode) {
+          console.log('Saved episode:', selectedEpisode);
+
+          // Update the button text with the selected episode
+          const newText = 'Ep ' + selectedEpisode;
+          episodesBtn.textContent = newText;
+          originalText = episodesBtn.textContent; // Update original text
+
+          // Measure widths of both texts
+          const episodeTextWidth = measureTextWidth(newText, episodesBtn);
+          const hoverTextWidth = measureTextWidth(hoverText, episodesBtn);
+
+          // Set min-width to the larger of the two (plus padding)
+          const maxWidth = Math.max(episodeTextWidth, hoverTextWidth);
+          const minWidth = Math.ceil(maxWidth + 16); // Add 16px for padding (8px on each side)
+          episodesBtn.style.minWidth = minWidth + 'px';
+
+          // Update the series image
+          const episodeNumberMatch = selectedEpisode.match(/^(\d+)\./);
+          if (episodeNumberMatch) {
+            const episodeNumber = episodeNumberMatch[1];
+            const seriesValue = getSeriesForEpisode(episodeNumber);
+            const newImageSrc = seriesImages[seriesValue];
+            if (newImageSrc && seriesImageElement) {
+              seriesImageElement.src = newImageSrc;
+            }
+          }
+
+          modal.style.display = 'none';
+        } else {
+          alert('Please select an episode first');
+        }
       });
 
       // Close dropdown when clicking outside
