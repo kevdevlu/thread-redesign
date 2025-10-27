@@ -213,6 +213,7 @@
       const group72 = document.querySelector('.group-72');
       const seriesImage = document.querySelector('.you-tube_-playlist_-thumbnails-01');
       const episodesBtn = document.querySelector('.episodes-0-4');
+      const starIcon = document.querySelector('.star');
       var originalText = episodesBtn.textContent;
       const hoverText = 'Choose Week';
 
@@ -412,8 +413,8 @@
       const modal = document.getElementById('chooseWeekModal');
       const closeBtn = document.querySelector('.close');
 
-      // Open modal when button is clicked
-      episodesBtn.addEventListener('click', function() {
+      // Function to open modal
+      function openModal() {
         modal.style.display = 'block';
 
         // Extract episode number from current button text
@@ -431,7 +432,13 @@
 
         // Populate episodes for the current series
         populateEpisodes(seriesValue);
-      });
+      }
+
+      // Open modal when button is clicked
+      episodesBtn.addEventListener('click', openModal);
+
+      // Open modal when star is clicked
+      starIcon.addEventListener('click', openModal);
 
       // Close modal when X is clicked
       closeBtn.addEventListener('click', function() {

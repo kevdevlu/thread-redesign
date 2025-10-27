@@ -375,6 +375,7 @@
   position: absolute;
   top: 225px;
   width: 26px;
+  cursor: pointer;
 }
 
 .dashboard-ministry-leader-1 .icon {
