@@ -222,3 +222,21 @@
 .series-ministry-leader-1 .line-28 {
   position: fixed;
 }
+
+/* Navigation Links */
+.series-ministry-leader-1 .nav-link {
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.series-ministry-leader-1 .nav-link:hover {
+  color: #4a6a7d !important;
+  opacity: 0.8;
+}
+
+/* Navigation Icons */
+.series-ministry-leader-1 .nav-icon {
+  transition: opacity 0.2s ease;
+}

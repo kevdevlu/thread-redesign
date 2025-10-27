@@ -1154,3 +1154,21 @@
   background-color: #a79458;
   transform: translateY(1px);
 }
+
+/* Navigation Links */
+.dashboard-ministry-leader-1 .nav-link {
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dashboard-ministry-leader-1 .nav-link:hover {
+  color: #4a6a7d !important;
+  opacity: 0.8;
+}
+
+/* Navigation Icons */
+.dashboard-ministry-leader-1 .nav-icon {
+  transition: opacity 0.2s ease;
+}

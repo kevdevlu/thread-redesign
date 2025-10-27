@@ -554,3 +554,31 @@
   line-height: 20px;
   white-space: nowrap;
 }
+
+/* ===================================================================
+   NAVIGATION LINKS
+   =================================================================== */
+
+/* Navigation Links */
+.series-welcome .nav-link,
+.members .nav-link,
+.series-ministry .nav-link {
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.series-welcome .nav-link:hover,
+.members .nav-link:hover,
+.series-ministry .nav-link:hover {
+  color: #4a6a7d !important;
+  opacity: 0.8;
+}
+
+/* Navigation Icons */
+.series-welcome .nav-icon,
+.members .nav-icon,
+.series-ministry .nav-icon {
+  transition: opacity 0.2s ease;
+}

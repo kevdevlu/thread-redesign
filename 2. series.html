@@ -228,15 +228,15 @@
       />
       <div class="rectangle-8"></div>
       <div class="group-99">
-        <div class="dashboard manrope-bold-pickled-bluewood-22px">Dashboard</div>
-        <div class="group-99-item manrope-extra-bold-pickled-bluewood-22px">Series</div>
-        <div class="group-99-item manrope-bold-pickled-bluewood-22px">Members</div>
-        <div class="notifications manrope-bold-pickled-bluewood-22px">Notifications</div>
+        <a href="1. dashboard.html" class="dashboard manrope-bold-pickled-bluewood-22px nav-link" data-icon="dashboard">Dashboard</a>
+        <a href="2. series.html" class="group-99-item manrope-extra-bold-pickled-bluewood-22px nav-link" data-icon="series">Series</a>
+        <a href="16. members.html" class="group-99-item manrope-bold-pickled-bluewood-22px nav-link" data-icon="members">Members</a>
+        <a href="17. notifications.html" class="notifications manrope-bold-pickled-bluewood-22px nav-link" data-icon="notifications">Notifications</a>
         <div class="settings manrope-bold-pickled-bluewood-22px">Settings</div>
         <div class="logout manrope-bold-pickled-bluewood-22px">Logout</div>
       </div>
       <div class="group-100">
-        <div class="layer_1">
+        <div class="layer_1 nav-icon" data-icon="dashboard">
           <div class="gnwuq5">
             <div class="group-3">
               <img class="vector" src="img/vector.svg" alt="Vector" />
@@ -244,14 +244,14 @@
             </div>
           </div>
         </div>
-        <img class="layer_1-1" src="img/layer-1.svg" alt="Layer_1" />
-        <div class="group-69">
+        <img class="layer_1-1 nav-icon" src="img/layer-1.svg" alt="Layer_1" data-icon="series" />
+        <div class="group-69 nav-icon" data-icon="members">
           <img class="vector-2" src="img/vector-2.svg" alt="Vector" />
           <img class="vector-3" src="img/vector-3.svg" alt="Vector" />
           <img class="vector-4" src="img/vector-4.svg" alt="Vector" />
           <img class="vector-5" src="img/vector-5.svg" alt="Vector" />
         </div>
-        <div class="group-31">
+        <div class="group-31 nav-icon" data-icon="notifications">
           <img class="bell" src="img/bell.svg" alt="Bell" />
           <div class="ellipse-14"></div>
         </div>
@@ -265,5 +265,24 @@
       <div class="name manrope-bold-pickled-bluewood-22px">Josie Ziegler</div>
       <img class="line-28 line" src="img/line-27.svg" alt="Line 28" />
     </div>
+
+    <script>
+      // Navigation hover effects for icons
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function(link) {
+        const iconType = link.getAttribute('data-icon');
+        const correspondingIcon = document.querySelector('.nav-icon[data-icon="' + iconType + '"]');
+
+        if (correspondingIcon) {
+          link.addEventListener('mouseenter', function() {
+            correspondingIcon.style.opacity = '0.6';
+          });
+
+          link.addEventListener('mouseleave', function() {
+            correspondingIcon.style.opacity = '1';
+          });
+        }
+      });
+    </script>
   </body>
 </html>

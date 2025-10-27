@@ -17,29 +17,29 @@
       <div class="div">Josie Ziegler</div>
       <div class="rectangle-2"></div>
       <div class="group-2">
-        <div class="text-wrapper-2">Dashboard</div>
-        <div class="text-wrapper-3">Series</div>
-        <div class="text-wrapper-4">Members</div>
-        <div class="text-wrapper-5">Notifications</div>
+        <a href="1. dashboard.html" class="text-wrapper-2 nav-link" data-icon="dashboard">Dashboard</a>
+        <a href="2. series.html" class="text-wrapper-3 nav-link" data-icon="series">Series</a>
+        <a href="16. members.html" class="text-wrapper-4 nav-link" data-icon="members">Members</a>
+        <a href="17. notifications.html" class="text-wrapper-5 nav-link" data-icon="notifications">Notifications</a>
         <div class="text-wrapper-6">Settings</div>
         <div class="text-wrapper-7">Logout</div>
       </div>
       <div class="group-3">
-        <div class="layer">
+        <div class="layer nav-icon" data-icon="dashboard">
           <div class="gnwuq">
             <div class="group-4">
               <img class="vector" src="img/vector.svg" /> <img class="img" src="img/vector-1.svg" />
             </div>
           </div>
         </div>
-        <img class="layer-2" src="img/layer-1.svg" />
-        <div class="group-5">
+        <img class="layer-2 nav-icon" src="img/layer-1.svg" data-icon="series" />
+        <div class="group-5 nav-icon" data-icon="members">
           <img class="vector-2" src="img/vector-2.svg" />
           <img class="vector-3" src="img/vector-3.svg" />
           <img class="vector-4" src="img/vector-4.svg" />
           <img class="vector-5" src="img/vector-5.svg" />
         </div>
-        <div class="group-6">
+        <div class="group-6 nav-icon" data-icon="notifications">
           <img class="bell" src="img/bell.svg" />
           <div class="ellipse"></div>
         </div>
@@ -251,5 +251,24 @@
       </div>
       <div class="rectangle-8"></div>
     </div>
+
+    <script>
+      // Navigation hover effects for icons
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function(link) {
+        const iconType = link.getAttribute('data-icon');
+        const correspondingIcon = document.querySelector('.nav-icon[data-icon="' + iconType + '"]');
+
+        if (correspondingIcon) {
+          link.addEventListener('mouseenter', function() {
+            correspondingIcon.style.opacity = '0.6';
+          });
+
+          link.addEventListener('mouseleave', function() {
+            correspondingIcon.style.opacity = '1';
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -366,3 +366,21 @@
   top: 182px;
   width: 311px;
 }
+
+/* Navigation Links */
+.notifications-ministry-leader .nav-link {
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.notifications-ministry-leader .nav-link:hover {
+  color: #4a6a7d !important;
+  opacity: 0.8;
+}
+
+/* Navigation Icons */
+.notifications-ministry-leader .nav-icon {
+  transition: opacity 0.2s ease;
+}
