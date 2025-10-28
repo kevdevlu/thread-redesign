@@ -535,25 +535,42 @@
           if (activeTagFilters.size > 0) {
             allCards.forEach(function(card) {
               const cardTags = card.querySelectorAll('.tag');
-              let hasMatchingTag = false;
-              let hasCompleteSeries = false;
+              const cardTagTexts = new Set();
 
+              // Build a set of this card's tags
               cardTags.forEach(function(cardTag) {
-                const tagText = cardTag.textContent;
-                if (activeTagFilters.has(tagText)) {
-                  hasMatchingTag = true;
-                }
-                if (tagText === 'COMPLETE SERIES') {
-                  hasCompleteSeries = true;
-                }
+                cardTagTexts.add(cardTag.textContent);
               });
 
-              // Show card if it has a matching tag OR has "COMPLETE SERIES" tag, and is in a visible section
               const cardSection = card.closest('.series-section');
-              if ((hasMatchingTag || hasCompleteSeries) && cardSection && cardSection.style.display !== 'none') {
-                card.style.display = 'block';
+
+              // Special case: If COMPLETE SERIES is in active filters, only show cards with COMPLETE SERIES
+              if (activeTagFilters.has('COMPLETE SERIES')) {
+                if (cardTagTexts.has('COMPLETE SERIES') && cardSection && cardSection.style.display !== 'none') {
+                  card.style.display = 'block';
+                } else {
+                  card.style.display = 'none';
+                }
               } else {
-                card.style.display = 'none';
+                // For other tags, use AND logic BUT always show COMPLETE SERIES cards
+                if (cardTagTexts.has('COMPLETE SERIES') && cardSection && cardSection.style.display !== 'none') {
+                  // Always show cards with COMPLETE SERIES tag
+                  card.style.display = 'block';
+                } else {
+                  // Check if card has ALL active tags (AND logic)
+                  let hasAllTags = true;
+                  activeTagFilters.forEach(function(activeTag) {
+                    if (!cardTagTexts.has(activeTag)) {
+                      hasAllTags = false;
+                    }
+                  });
+
+                  if (hasAllTags && cardSection && cardSection.style.display !== 'none') {
+                    card.style.display = 'block';
+                  } else {
+                    card.style.display = 'none';
+                  }
+                }
               }
             });
           } else {
@@ -581,16 +598,36 @@
             activeTagFilters.delete(tag);
             this.classList.remove('active');
           } else {
-            // If not holding modifier keys, clear all other tag filters
-            if (!isMultiSelect) {
+            // Special handling for "COMPLETE SERIES" - always clear all other tags
+            if (tag === 'COMPLETE SERIES') {
               activeTagFilters.clear();
               tagFilterBtns.forEach(function(b) {
                 b.classList.remove('active');
               });
+              activeTagFilters.add(tag);
+              this.classList.add('active');
+            } else {
+              // If selecting a non-COMPLETE SERIES tag, remove COMPLETE SERIES if active
+              if (activeTagFilters.has('COMPLETE SERIES')) {
+                activeTagFilters.delete('COMPLETE SERIES');
+                tagFilterBtns.forEach(function(b) {
+                  if (b.getAttribute('data-tag') === 'COMPLETE SERIES') {
+                    b.classList.remove('active');
+                  }
+                });
+              }
+
+              // If not holding modifier keys, clear all other tag filters
+              if (!isMultiSelect) {
+                activeTagFilters.clear();
+                tagFilterBtns.forEach(function(b) {
+                  b.classList.remove('active');
+                });
+              }
+              // Add the new tag
+              activeTagFilters.add(tag);
+              this.classList.add('active');
             }
-            // Add the new tag
-            activeTagFilters.add(tag);
-            this.classList.add('active');
           }
 
           // Filter cards based on active tags
@@ -605,25 +642,37 @@
               }
             });
           } else {
-            // Show only cards that have at least one of the active tags
-            // OR cards with "COMPLETE SERIES" tag (catch-all)
+            // AND logic: Show only cards that have ALL active tags
+            // Special case: Cards with "COMPLETE SERIES" tag ALWAYS show (unless COMPLETE SERIES itself is selected)
             allCards.forEach(function(card) {
               const cardTags = card.querySelectorAll('.tag');
-              let hasMatchingTag = false;
-              let hasCompleteSeries = false;
+              const cardTagTexts = new Set();
 
+              // Build a set of this card's tags
               cardTags.forEach(function(cardTag) {
-                const tagText = cardTag.textContent;
-                if (activeTagFilters.has(tagText)) {
-                  hasMatchingTag = true;
-                }
-                if (tagText === 'COMPLETE SERIES') {
-                  hasCompleteSeries = true;
-                }
+                cardTagTexts.add(cardTag.textContent);
               });
 
-              // Show if has matching tag OR has "COMPLETE SERIES" tag
-              card.style.display = (hasMatchingTag || hasCompleteSeries) ? 'block' : 'none';
+              // Special case: If COMPLETE SERIES is in active filters, only show cards with COMPLETE SERIES
+              // (since it can't be combined with other tags)
+              if (activeTagFilters.has('COMPLETE SERIES')) {
+                card.style.display = cardTagTexts.has('COMPLETE SERIES') ? 'block' : 'none';
+              } else {
+                // For other tags, use AND logic BUT always show COMPLETE SERIES cards
+                if (cardTagTexts.has('COMPLETE SERIES')) {
+                  // Always show cards with COMPLETE SERIES tag
+                  card.style.display = 'block';
+                } else {
+                  // Check if card has ALL active tags (AND logic)
+                  let hasAllTags = true;
+                  activeTagFilters.forEach(function(activeTag) {
+                    if (!cardTagTexts.has(activeTag)) {
+                      hasAllTags = false;
+                    }
+                  });
+                  card.style.display = hasAllTags ? 'block' : 'none';
+                }
+              }
             });
 
             // Hide sections that have no visible cards
