@@ -191,11 +191,10 @@
               <div class="dropdown-item" data-value="56-60">Mark (56-60)</div>
 
               <div class="dropdown-section-label">My Church Series</div>
-              <div class="dropdown-item" data-value="places-prayer">Places of Prayer: Devotionals</div>
-              <div class="dropdown-item" data-value="lords-prayer-retreat">Lord's Prayer Personal Retreat</div>
-              <div class="dropdown-item" data-value="practicing-lords-prayer">Practicing the Lord's Prayer</div>
-              <div class="dropdown-item" data-value="treasuring-god">Treasuring God</div>
-              <div class="dropdown-item" data-value="wise-men">Wise Men Say</div>
+              <div class="dropdown-item" data-value="kingdom-kids">Kingdom Kids</div>
+              <div class="dropdown-item" data-value="family-devotions">Family Devotions</div>
+              <div class="dropdown-item" data-value="leadership-essentials">Leadership Essentials</div>
+              <div class="dropdown-item" data-value="advent-journey">Advent Journey</div>
             </div>
           </div>
         </div>
@@ -208,142 +207,9 @@
       </div>
     </div>
 
+    <script src="js/series-data.js"></script>
     <script>
-      // Change Episodes 0-4 button text on hover
-      const group72 = document.querySelector('.group-72');
-      const seriesImage = document.querySelector('.you-tube_-playlist_-thumbnails-01');
-      const episodesBtn = document.querySelector('.episodes-0-4');
-      const starIcon = document.querySelector('.star');
-      var originalText = episodesBtn.textContent;
-      const hoverText = 'Choose Week';
-
-      function showChooseWeek() {
-        episodesBtn.textContent = hoverText;
-        episodesBtn.classList.add('active-hover');
-      }
-
-      function showEpisodes() {
-        episodesBtn.textContent = originalText;
-        episodesBtn.classList.remove('active-hover');
-      }
-
-      group72.addEventListener('mouseenter', showChooseWeek);
-      group72.addEventListener('mouseleave', showEpisodes);
-      seriesImage.addEventListener('mouseenter', showChooseWeek);
-      seriesImage.addEventListener('mouseleave', showEpisodes);
-
-      // Episode data for each series
-      const seriesEpisodes = {
-        '0-4': [
-          '0. Welcome to Thread',
-          '1. Our Image of God',
-          '2. Why Story?',
-          '3. Why Spirituality?',
-          '4. The Story of Our Faith'
-        ],
-        '5-11': [
-          '5. Creation & Beauty',
-          '6. Seasons & Rhythms',
-          '7. Light & Darkness',
-          '8. Becoming Fully Human',
-          '9. Human Limitations',
-          '10. The Flood',
-          '11. Babel'
-        ],
-        '12-19': [
-          '12. Abraham',
-          '13. Abraham: Covenant',
-          '14. Sarah & Hagar',
-          '15. Jacob',
-          '16. Jacob\'s Wrestling Match',
-          '17. Joseph & Judah',
-          '18. Moses in Egypt',
-          '19. Moses in Wilderness'
-        ],
-        '20-26': [
-          '20. The Sign',
-          '21. The Exodus',
-          '22. The Wilderness',
-          '23. The Presence',
-          '24. Law & Priesthood',
-          '25. The Tabernacle',
-          '26. The Culture'
-        ],
-        '27-30': [
-          '27. Promised Land',
-          '28. Joshua',
-          '29. Judges',
-          '30. Ruth'
-        ],
-        '31-35': [
-          '31. Hannah & Samuel',
-          '32. King Saul',
-          '33. David & Jonathan',
-          '34. King David',
-          '35. King Solomon'
-        ],
-        '36-41': [
-          '36. Israel\'s Kings',
-          '37. Israel\'s Prophets',
-          '38. Judah\'s King\'s',
-          '39. Judah\'s Prophets',
-          '40. Exile',
-          '41. Jerusalem\'s Fall'
-        ],
-        '42-46': [
-          '42. Life in Exile',
-          '43. Exilic Prophets',
-          '44. Rebuilding the Temple',
-          '45. Esther',
-          '46. Rebuilding the Wall'
-        ],
-        '47': [
-          '47. God\'s People Waited'
-        ],
-        '48-55': [
-          '48. The Jewish Jesus',
-          '49. The Teacher Jesus',
-          '50. The Ministry of Jesus',
-          '51. Parables of the Kingdom',
-          '52. The Messiah Jesus',
-          '53. The Community of Jesus',
-          '54. The Judgment of Jesus',
-          '55. The Triumph of Jesus'
-        ],
-        '56-60': [
-          '56. Exodus (Mark pt. 1)',
-          '57. Crowds (Mark pt. 2)',
-          '58. Battles (Mark pt. 3)',
-          '59. Calling (Mark pt. 4)',
-          '60. Grace (Mark pt. 5)',
-        ],
-        'places-prayer': [
-          '1. A Place in the Family',
-          '2. A Place of Holiness',
-          '3. A Place of Surrender',
-          '4. A Place of Need',
-          '5. A Place of Exile',
-          '6. Parable Places',
-          '7. Paul\'s Places of Prayer'
-        ]
-      };
-
-      // Mapping of series values to their display names
-      const seriesNames = {
-        '0-4': 'Starting Point (0-4)',
-        '5-11': 'God\'s World Created (5-11)',
-        '12-19': 'God\'s People Birthed (12-19)',
-        '20-26': 'God\'s Nation Formed (20-26)',
-        '27-30': 'God\'s Land Established (27-30)',
-        '31-35': 'God\'s People Blessed (31-35)',
-        '36-41': 'God\'s People Divided (36-41)',
-        '42-46': 'God\'s People Returned (42-46)',
-        '47': 'God\'s People Waited (47)',
-        '48-55': 'Matthew (48-55)',
-        '56-60': 'Mark (56-60)'
-      };
-
-      // Mapping of series values to their thumbnail images
+      // Mapping of series values to their thumbnail images (dashboard-specific)
       const seriesImages = {
         '0-4': 'img/youtube-playlist-thumbnails-01.png',
         '5-11': 'img/youtube-playlist-thumbnails-02.png',
@@ -445,7 +311,29 @@
         populateEpisodes(seriesValue);
       }
 
-      // Open modal when button is clicked
+      // Change Episodes 0-4 button text on hover
+      const group72 = document.querySelector('.group-72');
+      const seriesImage = document.querySelector('.you-tube_-playlist_-thumbnails-01');
+      const episodesBtn = document.querySelector('.episodes-0-4');
+      const starIcon = document.querySelector('.star');
+      var originalText = episodesBtn.textContent;
+      const hoverText = 'Choose Week';
+
+      function showChooseWeek() {
+        episodesBtn.textContent = hoverText;
+        episodesBtn.classList.add('active-hover');
+      }
+
+      function showEpisodes() {
+        episodesBtn.textContent = originalText;
+        episodesBtn.classList.remove('active-hover');
+      }
+
+      group72.addEventListener('mouseenter', showChooseWeek);
+      group72.addEventListener('mouseleave', showEpisodes);
+      seriesImage.addEventListener('mouseenter', showChooseWeek);
+      seriesImage.addEventListener('mouseleave', showEpisodes);
+
       episodesBtn.addEventListener('click', openModal);
 
       // Open modal when star is clicked
