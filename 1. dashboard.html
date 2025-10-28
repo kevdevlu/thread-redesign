@@ -40,11 +40,11 @@
       <div class="group-98">
         <div class="rectangle-23"></div>
         <div class="mission-point-christian-church">Mission Point Christian Church</div>
-        <h1 class="number-2 number-7 manrope-bold-white-48px">333</h1>
-        <div class="number-3 number-7 manrope-bold-white-48px">304</div>
-        <div class="number-4 number-7 manrope-bold-white-48px">8</div>
-        <div class="number-5 number-7 manrope-bold-white-48px">34</div>
-        <div class="sat manrope-bold-white-48px">SAT</div>
+        <h1 class="number-2 number-7 manrope-bold-white-48px" id="totalUsers">333</h1>
+        <div class="number-3 number-7 manrope-bold-white-48px" id="activeUsers">304</div>
+        <div class="number-4 number-7 manrope-bold-white-48px" id="newUsers">8</div>
+        <div class="number-5 number-7 manrope-bold-white-48px" id="ministryLeaders">34</div>
+        <div class="sat manrope-bold-white-48px" id="ministryCode">SAT</div>
         <div class="total-users manrope-bold-white-16px">Total Users</div>
         <div class="monthly-active-users manrope-bold-white-16px">Monthly Active Users</div>
         <div class="new-users manrope-bold-white-16px">New Users</div>
@@ -164,7 +164,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2 class="modal-title">Choose Week</h2>
-        <p class="modal-help-text">Choose the week that all members of your group sees when they first open their Thread App.</p>
+        <p class="modal-help-text">Choose the week that all members of your group sees when they first open their Thread app.</p>
 
         <div class="series-dropdown-container">
           <label for="seriesSearch" class="dropdown-label">Select Series:</label>
@@ -316,8 +316,16 @@
           '58. Battles (Mark pt. 3)',
           '59. Calling (Mark pt. 4)',
           '60. Grace (Mark pt. 5)',
+        ],
+        'places-prayer': [
+          '1. A Place in the Family',
+          '2. A Place of Holiness',
+          '3. A Place of Surrender',
+          '4. A Place of Need',
+          '5. A Place of Exile',
+          '6. Parable Places',
+          '7. Paul\'s Places of Prayer'
         ]
-        // Add episodes for My Church Series as needed
       };
 
       // Mapping of series values to their display names
@@ -347,7 +355,8 @@
         '42-46': 'img/youtube-playlist-thumbnails-1.png',
         '47': 'img/screenshot-2025-10-22-at-9-21-40-pm-1.png',
         '48-55': 'img/screenshot-2025-06-30-at-2-39-05-pm-1@2x.png',
-        '56-60': 'img/screenshot-2025-10-22-at-6-12-01-pm-1@2x.png'
+        '56-60': 'img/screenshot-2025-10-22-at-6-12-01-pm-1@2x.png',
+        'places-prayer': 'img/screenshot-2025-05-21-at-2-19-50-pm-1.png'
       };
 
       // Function to determine which series an episode number belongs to
@@ -368,6 +377,7 @@
       }
 
       let selectedEpisode = null;
+      let currentSeriesValue = null; // Track the currently selected series
       const episodesContainer = document.getElementById('episodesContainer');
       const saveBtn = document.getElementById('saveBtn');
       const seriesImageElement = document.querySelector('.you-tube_-playlist_-thumbnails-01');
@@ -376,6 +386,7 @@
       function populateEpisodes(seriesValue) {
         episodesContainer.innerHTML = '';
         selectedEpisode = null;
+        currentSeriesValue = seriesValue; // Store the current series
 
         const episodes = seriesEpisodes[seriesValue];
         if (!episodes) {
@@ -534,15 +545,10 @@
           const minWidth = Math.ceil(maxWidth + 16); // Add 16px for padding (8px on each side)
           episodesBtn.style.minWidth = minWidth + 'px';
 
-          // Update the series image
-          const episodeNumberMatch = selectedEpisode.match(/^(\d+)\./);
-          if (episodeNumberMatch) {
-            const episodeNumber = episodeNumberMatch[1];
-            const seriesValue = getSeriesForEpisode(episodeNumber);
-            const newImageSrc = seriesImages[seriesValue];
-            if (newImageSrc && seriesImageElement) {
-              seriesImageElement.src = newImageSrc;
-            }
+          // Update the series image using the currently selected series
+          const newImageSrc = seriesImages[currentSeriesValue];
+          if (newImageSrc && seriesImageElement) {
+            seriesImageElement.src = newImageSrc;
           }
 
           modal.style.display = 'none';
@@ -573,6 +579,79 @@
             correspondingIcon.style.opacity = '1';
           });
         }
+      });
+
+      // Dashboard statistics click handlers
+      // Total Users - go to all members
+      document.getElementById('totalUsers').addEventListener('click', function() {
+        window.location.href = '16. members.html';
+      });
+
+      // Active Users - go to members filtered by Active status
+      document.getElementById('activeUsers').addEventListener('click', function() {
+        window.location.href = '16. members.html?status=Active';
+      });
+
+      // New Users - go to members filtered by date range (10/27 to now)
+      document.getElementById('newUsers').addEventListener('click', function() {
+        const today = new Date();
+        const startDate = '2025-10-27';
+        const endDate = today.toISOString().split('T')[0];
+        window.location.href = '16. members.html?dateStart=' + startDate + '&dateEnd=' + endDate;
+      });
+
+      // Ministry Leaders - go to members filtered by Ministry Leader role
+      document.getElementById('ministryLeaders').addEventListener('click', function() {
+        window.location.href = '16. members.html?role=Ministry Leader';
+      });
+
+      // Ministry Code - copy to clipboard
+      const ministryCodeElement = document.getElementById('ministryCode');
+      let copyTooltip = null;
+
+      ministryCodeElement.addEventListener('click', function() {
+        const code = this.textContent;
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(code).then(function() {
+          // Remove existing tooltip if any
+          if (copyTooltip) {
+            copyTooltip.remove();
+          }
+
+          // Create and show tooltip
+          copyTooltip = document.createElement('div');
+          copyTooltip.textContent = 'Copied to clipboard';
+          copyTooltip.style.position = 'absolute';
+          copyTooltip.style.backgroundColor = '#2c4859';
+          copyTooltip.style.color = '#ffffff';
+          copyTooltip.style.padding = '8px 12px';
+          copyTooltip.style.borderRadius = '5px';
+          copyTooltip.style.fontSize = '14px';
+          copyTooltip.style.fontFamily = 'Manrope, Helvetica';
+          copyTooltip.style.fontWeight = '600';
+          copyTooltip.style.zIndex = '10000';
+          copyTooltip.style.pointerEvents = 'none';
+          copyTooltip.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.2)';
+
+          // Position tooltip above the element
+          const rect = ministryCodeElement.getBoundingClientRect();
+          copyTooltip.style.left = (rect.left + rect.width / 2) + 'px';
+          copyTooltip.style.top = (rect.top - 40) + 'px';
+          copyTooltip.style.transform = 'translateX(-50%)';
+
+          document.body.appendChild(copyTooltip);
+
+          // Remove tooltip after 2 seconds
+          setTimeout(function() {
+            if (copyTooltip) {
+              copyTooltip.remove();
+              copyTooltip = null;
+            }
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy:', err);
+        });
       });
     </script>
   </body>

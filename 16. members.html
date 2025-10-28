@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="globals-shared.css" />
     <link rel="stylesheet" href="components.css" />
     <link rel="stylesheet" href="css/members.css" />
+    <script src="js/members-data.js"></script>
   </head>
   <body>
     <div class="members" data-model-id="1149:280">
@@ -47,11 +48,121 @@
       </div>
       <img class="line" src="img/line-27.svg" />
       <img class="LOGO" src="img/logo-1.png" />
-      <div class="rectangle-3"></div>
-      <div class="group-7">
-        <div class="rectangle-4"></div>
-        <div class="rectangle-5"></div>
-      </div>
+
+      <div class="rectangle-3">
+        <!-- Table Controls -->
+        <div class="table-controls">
+          <h2 class="members-title">Members</h2>
+          <div class="controls-right">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by Name" />
+            <button id="exportBtn" class="export-btn">Export CSV</button>
+          </div>
+        </div>
+
+        <!-- Members Table -->
+        <table class="members-table" id="membersTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class="sortable" data-column="name">
+              Name
+              <span class="sort-arrows">
+                <span class="arrow-up">▲</span>
+                <span class="arrow-down">▼</span>
+              </span>
+            </th>
+            <th class="sortable" data-column="email">
+              Email
+              <span class="sort-arrows">
+                <span class="arrow-up">▲</span>
+                <span class="arrow-down">▼</span>
+              </span>
+            </th>
+            <th class="filterable" data-column="role">
+              Role
+              <select class="filter-select" id="roleFilter">
+                <option value="">All</option>
+                <option value="Ministry Leader">Ministry Leader</option>
+                <option value="Member">Member</option>
+              </select>
+            </th>
+            <th class="sortable date-filter-header" data-column="lastAccess">
+              Last Access
+              <span class="sort-arrows">
+                <span class="arrow-up">▲</span>
+                <span class="arrow-down">▼</span>
+              </span>
+              <span class="calendar-icon" id="calendarIcon" title="Filter by date range">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="3" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                  <line x1="2" y1="6" x2="14" y2="6" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="5" y1="1" x2="5" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="11" y1="1" x2="11" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </th>
+            <th class="filterable" data-column="status">
+              Status
+              <select class="filter-select" id="statusFilter">
+                <option value="">All</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Table rows will be populated by JavaScript -->
+        </tbody>
+      </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+          <button id="prevBtn" class="pagination-btn">← Previous</button>
+          <div id="paginationInfo" class="pagination-info">Showing 1-100 of 350 members</div>
+          <button id="nextBtn" class="pagination-btn">Next →</button>
+        </div>
+
+        <!-- Date Range Picker Popup -->
+        <div id="dateRangePicker" class="date-range-picker">
+          <div class="date-range-content">
+            <div class="date-range-header">Filter by Date Range</div>
+
+            <!-- Quick Filter Options -->
+            <div class="quick-filters">
+              <div class="quick-filters-label">Within the past:</div>
+              <div class="quick-filter-buttons">
+                <button class="quick-filter-btn" data-days="7">Week</button>
+                <button class="quick-filter-btn" data-days="14">2 Weeks</button>
+                <button class="quick-filter-btn" data-days="30">Month</button>
+              </div>
+            </div>
+
+            <div class="date-range-divider">or select custom range:</div>
+
+            <div class="date-inputs">
+              <div class="date-input-group">
+                <label for="startDate">From:</label>
+                <input type="date" id="startDate" class="date-input">
+              </div>
+              <div class="date-input-group">
+                <label for="endDate">To:</label>
+                <input type="date" id="endDate" class="date-input">
+              </div>
+            </div>
+            <div class="date-range-actions">
+              <button id="clearDateFilter" class="date-btn clear-btn">Clear</button>
+              <button id="applyDateFilter" class="date-btn apply-btn">Apply</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="group-7">
+          <div class="rectangle-4"></div>
+          <div class="rectangle-5"></div>
+        </div>
+      </div><!-- end rectangle-3 -->
+      <div class="old-table-data" style="display: none;">
       <div class="group-8">
         <div class="div-2">
           <div class="text-wrapper-8">Eleanor Rodriguez</div>
@@ -250,6 +361,7 @@
         <img class="line-6" src="img/line-30.svg" />
       </div>
       <div class="rectangle-8"></div>
+      </div><!-- end old-table-data -->
     </div>
 
     <script>
@@ -269,6 +381,326 @@
           });
         }
       });
+
+      // Members Table Management
+      // Data is loaded from js/members-data.js
+
+      let currentSort = { column: null, direction: 'asc' };
+      let filteredData = [...membersData];
+      let dateRange = { start: null, end: null };
+
+      // Pagination state
+      let currentPage = 1;
+      const itemsPerPage = 100;
+
+      // Populate table with pagination
+      function renderTable(data) {
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+
+        // Calculate pagination
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedData = data.slice(startIndex, endIndex);
+
+        // Render rows
+        paginatedData.forEach(function(member, index) {
+          const row = document.createElement('tr');
+          const globalIndex = startIndex + index + 1;
+          row.innerHTML = `
+            <td>${globalIndex}</td>
+            <td>${member.name}</td>
+            <td>${member.email}</td>
+            <td>${member.role}</td>
+            <td>${member.lastAccess}</td>
+            <td>${member.status}</td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        // Update pagination info
+        updatePaginationInfo(data.length);
+      }
+
+      // Update pagination info and buttons
+      function updatePaginationInfo(totalItems) {
+        const startIndex = (currentPage - 1) * itemsPerPage + 1;
+        const endIndex = Math.min(currentPage * itemsPerPage, totalItems);
+        const paginationInfo = document.getElementById('paginationInfo');
+        paginationInfo.textContent = `Showing ${startIndex}-${endIndex} of ${totalItems} members`;
+
+        // Enable/disable buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage >= Math.ceil(totalItems / itemsPerPage);
+      }
+
+      // Sorting functionality
+      document.querySelectorAll('.sortable').forEach(function(header) {
+        header.addEventListener('click', function(event) {
+          // Don't sort if clicking on calendar icon
+          if (event.target.closest('.calendar-icon')) {
+            return;
+          }
+
+          const column = this.getAttribute('data-column');
+
+          if (currentSort.column === column) {
+            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+          } else {
+            currentSort.column = column;
+            currentSort.direction = 'asc';
+          }
+
+          // Update arrow indicators
+          document.querySelectorAll('.sortable').forEach(function(h) {
+            h.classList.remove('sort-asc', 'sort-desc');
+          });
+          this.classList.add('sort-' + currentSort.direction);
+
+          // Sort data
+          filteredData.sort(function(a, b) {
+            let aVal = a[column];
+            let bVal = b[column];
+
+            // Handle dates
+            if (column === 'lastAccess') {
+              aVal = new Date(aVal);
+              bVal = new Date(bVal);
+            }
+
+            if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
+            if (aVal > bVal) return currentSort.direction === 'asc' ? 1 : -1;
+            return 0;
+          });
+
+          renderTable(filteredData);
+        });
+      });
+
+      // Filter functionality
+      function applyFilters() {
+        const roleFilter = document.getElementById('roleFilter').value;
+        const statusFilter = document.getElementById('statusFilter').value;
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+        filteredData = membersData.filter(function(member) {
+          const matchesRole = !roleFilter || member.role === roleFilter;
+          const matchesStatus = !statusFilter || member.status === statusFilter;
+          const matchesSearch = !searchTerm || member.name.toLowerCase().includes(searchTerm);
+
+          // Date range filtering
+          let matchesDate = true;
+          if (dateRange.start || dateRange.end) {
+            const memberDate = new Date(member.lastAccess);
+            if (dateRange.start) {
+              const startDate = new Date(dateRange.start);
+              if (memberDate < startDate) matchesDate = false;
+            }
+            if (dateRange.end) {
+              const endDate = new Date(dateRange.end);
+              if (memberDate > endDate) matchesDate = false;
+            }
+          }
+
+          return matchesRole && matchesStatus && matchesSearch && matchesDate;
+        });
+
+        // Reset to first page when filters change
+        currentPage = 1;
+        renderTable(filteredData);
+      }
+
+      document.getElementById('roleFilter').addEventListener('change', applyFilters);
+      document.getElementById('statusFilter').addEventListener('change', applyFilters);
+      document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+      // Pagination controls
+      document.getElementById('prevBtn').addEventListener('click', function() {
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable(filteredData);
+          // Scroll to top of table
+          document.querySelector('.members-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      document.getElementById('nextBtn').addEventListener('click', function() {
+        const maxPage = Math.ceil(filteredData.length / itemsPerPage);
+        if (currentPage < maxPage) {
+          currentPage++;
+          renderTable(filteredData);
+          // Scroll to top of table
+          document.querySelector('.members-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      // Export to CSV
+      document.getElementById('exportBtn').addEventListener('click', function() {
+        let csv = 'Name,Email,Role,Last Access,Status\n';
+
+        filteredData.forEach(function(member) {
+          csv += `"${member.name}","${member.email}","${member.role}","${member.lastAccess}","${member.status}"\n`;
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'members.csv';
+        a.click();
+        window.URL.revokeObjectURL(url);
+      });
+
+      // Date Range Picker functionality
+      const calendarIcon = document.getElementById('calendarIcon');
+      const dateRangePicker = document.getElementById('dateRangePicker');
+      const applyDateFilter = document.getElementById('applyDateFilter');
+      const clearDateFilter = document.getElementById('clearDateFilter');
+      const startDateInput = document.getElementById('startDate');
+      const endDateInput = document.getElementById('endDate');
+      const quickFilterBtns = document.querySelectorAll('.quick-filter-btn');
+
+      // Helper function to format date as YYYY-MM-DD
+      function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+      // Quick filter buttons
+      quickFilterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const days = parseInt(this.getAttribute('data-days'));
+          const today = new Date();
+          const pastDate = new Date();
+          pastDate.setDate(today.getDate() - days);
+
+          // Set date inputs
+          startDateInput.value = formatDate(pastDate);
+          endDateInput.value = formatDate(today);
+
+          // Highlight active button
+          quickFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+
+          // Auto-apply the filter
+          dateRange.start = startDateInput.value;
+          dateRange.end = endDateInput.value;
+          applyFilters();
+          dateRangePicker.classList.remove('active');
+
+          // Visual feedback on calendar icon
+          calendarIcon.style.color = '#c9b875';
+        });
+      });
+
+      // Toggle date range picker
+      calendarIcon.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const isActive = dateRangePicker.classList.contains('active');
+
+        if (!isActive) {
+          // Position the picker near the calendar icon
+          const iconRect = calendarIcon.getBoundingClientRect();
+          const tableContainer = document.querySelector('.rectangle-3');
+          const containerRect = tableContainer.getBoundingClientRect();
+
+          dateRangePicker.style.top = (iconRect.bottom - containerRect.top + 5) + 'px';
+          dateRangePicker.style.left = (iconRect.left - containerRect.left - 100) + 'px';
+
+          dateRangePicker.classList.add('active');
+        } else {
+          dateRangePicker.classList.remove('active');
+        }
+      });
+
+      // Close date picker when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!dateRangePicker.contains(event.target) && event.target !== calendarIcon) {
+          dateRangePicker.classList.remove('active');
+        }
+      });
+
+      // Apply date filter
+      applyDateFilter.addEventListener('click', function() {
+        dateRange.start = startDateInput.value;
+        dateRange.end = endDateInput.value;
+
+        // Remove active state from quick filter buttons (using custom dates)
+        quickFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+
+        applyFilters();
+        dateRangePicker.classList.remove('active');
+
+        // Visual feedback on calendar icon if date filter is active
+        if (dateRange.start || dateRange.end) {
+          calendarIcon.style.color = '#c9b875';
+        }
+      });
+
+      // Clear date filter
+      clearDateFilter.addEventListener('click', function() {
+        startDateInput.value = '';
+        endDateInput.value = '';
+        dateRange.start = null;
+        dateRange.end = null;
+
+        // Remove active state from quick filter buttons
+        quickFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+
+        applyFilters();
+        dateRangePicker.classList.remove('active');
+
+        // Reset calendar icon color
+        calendarIcon.style.color = '';
+      });
+
+      // Parse URL parameters and apply filters
+      function applyUrlFilters() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Apply status filter
+        const statusParam = urlParams.get('status');
+        if (statusParam) {
+          document.getElementById('statusFilter').value = statusParam;
+        }
+
+        // Apply role filter
+        const roleParam = urlParams.get('role');
+        if (roleParam) {
+          document.getElementById('roleFilter').value = roleParam;
+        }
+
+        // Apply date range filter
+        const dateStartParam = urlParams.get('dateStart');
+        const dateEndParam = urlParams.get('dateEnd');
+        if (dateStartParam || dateEndParam) {
+          if (dateStartParam) {
+            startDateInput.value = dateStartParam;
+            dateRange.start = dateStartParam;
+          }
+          if (dateEndParam) {
+            endDateInput.value = dateEndParam;
+            dateRange.end = dateEndParam;
+          }
+          // Visual feedback on calendar icon
+          calendarIcon.style.color = '#c9b875';
+        }
+
+        // Apply filters if any parameters were set
+        if (statusParam || roleParam || dateStartParam || dateEndParam) {
+          applyFilters();
+        }
+      }
+
+      // Initial render with URL filters
+      applyUrlFilters();
+      if (!window.location.search) {
+        renderTable(membersData);
+      }
     </script>
   </body>
 </html>

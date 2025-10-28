@@ -863,13 +863,13 @@
 
 .dashboard-ministry-leader-1 .group-72:hover .episodes-0-4,
 .dashboard-ministry-leader-1 .episodes-0-4.active-hover {
-  background-color: #8a99ac;
+  background-color: #D9A74B;
   color: #ffffff;
   border-radius: 8px;
 }
 
 .dashboard-ministry-leader-1 .episodes-0-4:hover {
-  background-color: #7a8999 !important;
+  background-color: #a57f3a !important;
   border-radius: 8px;
 }
 
@@ -984,7 +984,7 @@
 
 .series-search-input {
   width: 100%;
-  padding: 12px 15px;
+  padding: 10px 15px;
   font-family: "Manrope", Helvetica;
   font-size: 16px;
   font-weight: 500;
@@ -1085,7 +1085,7 @@
 
 /* Episode Card */
 .episode-card {
-  padding: 16px 20px;
+  padding: 10px 20px;
   background-color: #f2f2f2;
   border: 2px solid #d0d0d0;
   border-radius: 10px;
@@ -1104,7 +1104,7 @@
 }
 
 .episode-card.selected {
-  background-color: #ffffff;
+  background-color: #D9A74B;
   border-color: #2c4859;
   border-width: 3px;
   box-shadow: 0px 2px 8px rgba(44, 72, 89, 0.15);
@@ -1134,7 +1134,7 @@
   width: 100%;
   padding: 14px;
   margin-top: 25px;
-  background-color: #c9b875;
+  background-color: #D9A74B;
   border: none;
   border-radius: 10px;
   font-family: "Manrope", Helvetica;
@@ -1146,12 +1146,12 @@
 }
 
 .modal-save-btn:hover {
-  background-color: #b8a566;
+  background-color: #ad853b;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .modal-save-btn:active {
-  background-color: #a79458;
+  background-color: #ad853b;
   transform: translateY(1px);
 }
 
@@ -1171,4 +1171,22 @@
 /* Navigation Icons */
 .dashboard-ministry-leader-1 .nav-icon {
   transition: opacity 0.2s ease;
+}
+
+/* Clickable Numbers Hover Effects */
+.dashboard-ministry-leader-1 .number-2,
+.dashboard-ministry-leader-1 .number-3,
+.dashboard-ministry-leader-1 .number-4,
+.dashboard-ministry-leader-1 .number-5,
+.dashboard-ministry-leader-1 .sat {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.dashboard-ministry-leader-1 .number-2:hover,
+.dashboard-ministry-leader-1 .number-3:hover,
+.dashboard-ministry-leader-1 .number-4:hover,
+.dashboard-ministry-leader-1 .number-5:hover,
+.dashboard-ministry-leader-1 .sat:hover {
+  color: #b0b0b0 !important;
 }
