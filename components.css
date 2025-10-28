@@ -779,6 +779,31 @@
   background-color: #ffffff;
 }
 
+/* Name cell with edit icon */
+.members .name-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.members .edit-icon {
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  color: #8A99AC;
+  font-size: 16px;
+}
+
+.members .members-table tbody tr:hover .edit-icon {
+  opacity: 1;
+}
+
+.members .edit-icon:hover {
+  color: #c9b875;
+}
+
 .members .members-table td {
   padding: 7px 20px;
   font-family: "Manrope", Helvetica;

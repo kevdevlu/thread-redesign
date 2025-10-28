@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="globals-shared.css" />
     <link rel="stylesheet" href="components.css" />
     <link rel="stylesheet" href="css/members.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="js/members-data.js"></script>
   </head>
   <body>
@@ -409,7 +410,10 @@
           const globalIndex = startIndex + index + 1;
           row.innerHTML = `
             <td>${globalIndex}</td>
-            <td>${member.name}</td>
+            <td class="name-cell">
+              <span class="member-name">${member.name}</span>
+              <i class="fa-solid fa-pen-to-square edit-icon"></i>
+            </td>
             <td>${member.email}</td>
             <td>${member.role}</td>
             <td>${member.lastAccess}</td>
